@@ -1,13 +1,17 @@
 const socket = io();
 
 socket.on('evento', data =>{
-    console.log(data)
     let p = document.createElement("p")
-    p.innerText = data
+    p.innerText = `producto: ${data.title}, precio: ${data.price}`
     document.getElementById('chat').appendChild(p)  
 })
 document.getElementById('btn').onclick = ()=>{
-    socket.emit('evento', document.getElementById('input').value)
+    
+    const obj = {
+        title: document.getElementById('title').value,
+        price: document.getElementById('price').value
+    }
+    socket.emit('evento', obj)
 }
 /* setInterval(()=>{
     socket.emit('evento', `[${new Date().toLocaleTimeString()}]Datos enviados desde el cliente al servidor`)

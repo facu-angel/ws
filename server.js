@@ -15,9 +15,6 @@ httpServer.listen(process.env.PORT || 8080)
 io.on('connection', (socket)=>{
     //Se ejecuta una vez cuando se conecta el cliente
     console.log('se abrio una nueva coneccion');
-    /* setInterval(()=>{
-        socket.emit('evento', `[${new Date().toLocaleTimeString()}]Datos enviados desde el servidor al cliente`)
-     }, 2000) */
     socket.on('evento', data =>{
         //Se ejecuta cuando llega 'data'
         console.log(data)
