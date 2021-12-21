@@ -1,0 +1,19 @@
+body{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "title title"
+        "L R"
+    ;
+}
+h1{
+    grid-area:title ;
+    text-align: center;
+}
+.left{
+    grid-area: L;
+}
+.right{
+    grid-area: R;
+}

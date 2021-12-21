@@ -4,14 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Probando Socket</title>
 </head>
 <body>
     <h1>Bienvenido a la prueba del socket</h1>
-        <input type="text" id="title" placeholder="Producto">
-        <input type="number" id="price" placeholder="Precio">
-        <button id="btn">Click me</button>
-    <div id="chat"></div>
+    <div id="left">
+            <form id="form">
+            <label name="title">Producto</label>
+            <input type="text" name="title" id="title">
+            <label name="price">Precio</label>
+            <input type="number" name="price" id="price">
+            <button>Enviar</button>
+        </form>
+        <button id="btn-load">Cargar mensajes anteriores</button>
+        <div id="products"></div>
+    </div>
+    <div id="right">
+        <input type="email" name="email" id="email" placeholder="Ingresar Email">
+        <button id="btn-confirm">Confirmar</button>
+        <form id="form-chat">
+            <label name="name">Nombre</label>
+            <input type="text" name="name" id="name">
+            <label name="message">Mensaje</label>
+            <input type="text" name="message" id="message">
+            <button>Enviar</button>
+        </form>
+        <div id="chat"></div>
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="index.js"></script>
 </body>
